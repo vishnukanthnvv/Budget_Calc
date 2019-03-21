@@ -398,7 +398,7 @@ var controller = (function(budgetCtrl, UICtrl) {
             ID = parseInt(splitID[1]);
         
             // 1. Delete the item from data structure
-            budgetController.deleteItem(type, ID);
+            budgetCtrl.deleteItem(type, ID);
 
             // 2. Delete the item from UI
             UICtrl.deleteListItem(itemID);
@@ -415,12 +415,14 @@ var controller = (function(budgetCtrl, UICtrl) {
         init: function() {
             console.log('Application has started');
             UICtrl.displayDate();
-            setupEventListeners();
+
             UICtrl.displayBudget({
                 budget: 0,
                 totalInc: 0,
                 totalExp: 0,
-                percentage: -1});
+                percentage: -1
+            });
+            setupEventListeners();
     }
     };
 
